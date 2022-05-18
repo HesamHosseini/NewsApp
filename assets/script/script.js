@@ -1,55 +1,50 @@
-// const successCallback = (position) => {
-//   console.log(position);
-// };
-
-// const errorCallback = (error) => {
-//   console.error("shit");
-// };
-
-// navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
-//   enableHighAccuracy: true,
-// });
-const chromeAPI = "http://ip-api.com/json/";
 class WeatherApi {
-  constructor() {
-    let city = undefined;
-    if (window.chrome) {
-
-    }
-  }
+  constructor() {}
 
   static async fetchAPI_IP() {
+    const chromeAPI = "http://ip-api.com/json/";
     const res = await fetch(chromeAPI);
     const city = await res.json();
-    console.log(await city);
+    return await city;
   }
 
+  static async fetchUserLocation() {
+    const latLong = {};
+    const successCallback = (position) => {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      latLong.latitude = latitude;
+      latLong.longitude = longitude;
+    };
+    const errorCallback = (error) => {
+      console.log(error);
+    };
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
+      enableHighAccuracy: true,
+    });
+    return latLong;
+  }
 
-  cityCaller() {
-    console.log(this.city);
+  static async GeoLocationToCityApi(lat, long) {
+    const res = await fetch(
+      `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${long}&key=362eae9e02344749b2ce47d063900456`
+    );
+    const locationInfo = await res.json();
+    return await locationInfo.results[0].components.city;
+  }
+
+  static final() {
+    // const cords = WeatherApi.fetchUserLocation();
+    // console.log(cords);
+    // const mamad = WeatherApi.GeoLocationToCityApi(
+    //   cords.latitude,
+    //   cords.longitude
+    // );
+    // console.log(await mamad);
+    WeatherApi.fetchUserLocation().then((cords) => {
+      WeatherApi.GeoLocationToCityApi(cords.latitude, cords.longitude);
+    });
   }
 }
 
-const a = new WeatherApi();
-// ******************************************************************************
 
-// const getData = async () => {
-//     const res = await fetch(API_URL);
-//     data = await res.json();
-//   };
-
-//   async function postData(data) {
-//     const res = await fetch(API_URL, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(data),
-//     });
-//   }
-
-// ******************************************************************************
-
-// if (location.protocol != "https:") {
-//   console.log("shit");
-// }
