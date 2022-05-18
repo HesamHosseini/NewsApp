@@ -41,10 +41,9 @@ class WeatherApi {
     //   cords.longitude
     // );
     // console.log(await mamad);
-    WeatherApi.fetchUserLocation().then((cords) => {
-      WeatherApi.GeoLocationToCityApi(cords.latitude, cords.longitude);
+    const a = WeatherApi.fetchUserLocation().then((cords) => {
+      return cords;
     });
+    console.log(a);
   }
 }
-
-
