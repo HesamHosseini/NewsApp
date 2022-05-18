@@ -47,3 +47,16 @@ class WeatherApi {
     console.log(a);
   }
 }
+
+// function clgFunc() {
+//   console.log("trigered");
+// }
+
+// const a = document.getElementsByTagName("input")[0];
+// console.log(a);
+// a.addEventListener("keypress", function (event) {
+//   if (event.key === "Enter") {
+//     event.preventDefault();
+//     document.getElementById("triggerInput").click();
+//   }
+// });

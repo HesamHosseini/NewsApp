@@ -1,0 +1,115 @@
+:root {
+  --skyBlue: #44ADFC ;
+  --whiteFormColor: #FFFDFA;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--skyBlue);
+}
+
+.cityInputForm {
+  background-color: #FFFDFA;
+  border-radius: 8px;
+}
+
+.cityInputForm h1 {
+  color: var(--skyBlue);
+  font-size: 1.5rem;
+  border-bottom: 0.5px solid gray;
+}
+
+.cityInputForm input {
+  height: 2.5rem;
+}
+
+.cityInputForm input:focus-visible {
+  border: 1px solid #0c96ff;
+  outline: 1px solid #0c96ff;
+  border-radius: 4px;
+}
+
+.cityInputForm button {
+  height: 2.5rem;
+  background-color: var(--skyBlue);
+  color: var(--whiteFormColor);
+  border: none;
+  outline: none;
+  border: 1px solid #0c96ff;
+  border-radius: 4px;
+}
+
+fieldset {
+  border: 1px solid #000;
+}
+
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+}
+
+.hr-text:before {
+  content: '';
+  background: linear-gradient(to right, transparent, #818078, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+
+.hr-text:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  color: black;
+  padding: 0 .5em;
+  line-height: 1.5em;
+  color: #818078;
+  background-color: #fcfcfa;
+}
+
+.arrow {
+  width: 20rem;
+}
+
+.popUpWeatherContainer {
+  background-color: var(--whiteFormColor);
+}
+
+.popUpWeatherContainer .modalHeader {
+  border-bottom: 0.5px solid gray;
+}
+
+.popUpWeatherContainer h1 {
+  color: var(--skyBlue);
+  font-size: 1.5rem;
+}
+
+.popUpWeatherContainer .weatherImgContainer img {
+  width: 15rem;
+}
+
+.weatherTemp {
+  font-size: 4rem;
+}
+
+.weatherLocation {
+  border-bottom: 0.5px solid gray;
+}
+
+.humidityAndtemretureIcon {
+  width: 3rem;
+}
+/*# sourceMappingURL=main.css.map */

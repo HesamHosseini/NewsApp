@@ -9,6 +9,97 @@
     <link rel="stylesheet" href="./assets/styles/common/main.css" />
   </head>
   <body>
+    <div class="container h-100">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-lg-4 col-md-6 mb-5">
+          <div class="text-end">
+            <img src="./assets/img/arrow.svg" class="arrow" alt="arrow" />
+          </div>
+          <div class="cityInputForm d-flex flex-column">
+            <h1 class="px-5 py-2">weather App</h1>
+            <input
+              class="mx-5 my-3 text-center"
+              placeholder="Enter City Name"
+              type="text"
+            />
+            <hr class="hr-text" data-content="OR" />
+            <button class="mx-5 mb-3">Get Device Location</button>
+            <button class="d-none" id="triggerInput" onclick="clgFunc()">
+              trigger
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6 col-12 mb-5 mt-5">
+          <div class="popUpWeatherContainer d-flex flex-column">
+            <div class="modalHeader d-flex flex-row mx-3">
+              <div class="returnBtn pt-2">
+                <img src="./assets/img/return.svg" alt="return" />
+              </div>
+              <h1 class="px-5 py-2">weather App</h1>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="weatherImgContainer text-center">
+                <img
+                  src="https://openweathermap.org/img/wn/01d@2x.png"
+                  alt="weatherImg"
+                />
+              </div>
+              <div class="weatherTemp text-center text-capitalize">
+                <span>27.5</span>°C<span></span>
+              </div>
+              <div class="weatherSummery text-center fs-2">
+                weather.Main(clear)
+              </div>
+              <div class="weatherLocation text-center pb-5">
+                <span>
+                  <img src="./assets/img/location.svg" alt="location" />
+                </span>
+                <span>City Name</span>,
+                <span>country name</span>
+              </div>
+              <div class="row text-center">
+                <div class="col">
+                  <div
+                    class="d-flex p-3 flex-row justify-content-center align-items-center"
+                    style="border-right: 0.5px solid gray"
+                  >
+                    <div>
+                      <img
+                        class="humidityAndtemretureIcon"
+                        src="./assets/img/tempreture.svg"
+                        alt="tempreture"
+                      />
+                    </div>
+                    <div class="d-flex flex-column">
+                      <div class="fs-2"><span>27.5</span>°C<span></span></div>
+                      <div>Feels like</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div
+                    class="d-flex p-3 flex-row justify-content-center align-items-center"
+                    style="border-right: 0.5px solid gray"
+                  >
+                    <div>
+                      <img
+                        class="humidityAndtemretureIcon"
+                        src="./assets/img/humidity.svg"
+                        alt="humidity"
+                      />
+                    </div>
+                    <div class="d-flex flex-column">
+                      <div class="fs-2"><span>50</span>%<span></span></div>
+                      <div>Humidity</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./assets/script/script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
