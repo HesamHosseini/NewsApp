@@ -98,7 +98,31 @@ fieldset {
 }
 
 .popUpWeatherContainer .weatherImgContainer img {
-  width: 15rem;
+  width: 10rem;
+}
+
+.animation {
+  animation-name: move;
+  animation-duration: 1s;
+  position: relative;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    left: 0px;
+    top: 100px;
+  }
+  33% {
+    opacity: 0.33;
+    left: 0px;
+    top: -100px;
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+    top: 0px;
+  }
 }
 
 .weatherTemp {
