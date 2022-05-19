@@ -24,6 +24,9 @@ class WeatherApi {
     };
     const errorCallback = (error) => {
       console.log(error);
+      alert(
+        "App wasn't able to access your location Becouse of your Browser please Enter you city manually"
+      );
     };
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
     return latLong;
